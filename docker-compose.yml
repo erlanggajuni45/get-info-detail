@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  express-app:
+    # network_mode: host
+    build:
+      context: .
+    ports:
+      - '5000:5000'
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - '100:80'
+    depends_on:
+      - express-app
