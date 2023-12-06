@@ -1,0 +1,450 @@
+:root {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  --font-size-xsmall: .5em;
+  --font-size-small: .8em;
+  --font-size-normal: 1em;
+  --font-size-medium: 1.2em;
+  --font-size-large: 1.5em;
+  --font-size-xlarge: 2em;
+  --font-size-x2large: 2.5em;
+  --font-size-x3large: 3em;
+  --level-1: #8dccad;
+  --level-2: #f5cc7f;
+  --level-3: #7b9fe0;
+  --level-4: #f27c8d;
+  --black: black;
+  --clr-wht-basic-glass: rgba(255, 255, 255, .8);
+  --clr-blk-glass: rgba(0, 0, 0, .92);
+  --clr-blk-glass-2: rgba(10, 14, 28, .92);
+  --clr-blk-glass-3: rgba(10, 14, 28, .8);
+  --clr-blk-raisin-black: #282828;
+  --clr-blk-raisin: #2A2939;
+  --clr-blk-raisin-2: #24212C;
+  --clr-blk-basic: #000000;
+  --clr-blk-rich: #0A0E1C;
+  --clr-gry-battleship: #989898;
+  --clr-gry-jet: #333333;
+  --clr-wht-basic: #FFFFFF;
+  --clr-wht-cultured: #f3f3f3;
+  --clr-wht-seasalt: #FAFAFA;
+  --clr-wht-platinum: #EBEBEB;
+  --clr-wht-gainsboro: #DADCE0;
+  --clr-wht-floral-white: #FFF8F0;
+  --clr-wht-magnolia: #EDE6F2;
+  --clr-wht-snow: #F7F0F0;
+  --clr-wht-light-grey: #D1D1D1;
+  --clr-wht-sonic-silver: #707070;
+  --clr-blk-siate-grey: #667085;
+  --clr-blk-davys-grey: #4F4F4F;
+  --clr-blk-eerie-black: #141414;
+  --clr-grn-sheen: #76BBB3;
+  --clr-grn-keppel: #08AF9C;
+  --clr-grn-generic-viridian: #068374;
+  --clr-grn-metalic-seaweed: #177E89;
+  --clr-grn-midnight-eagle: #084C61;
+  --clr-grn-charleston: #002A32;
+  --clr-grn-deep-jungle: #0c4b45;
+  --clr-grn-phthalo: #022723;
+  --clr-grn-bottle-green: #04644C;
+  --clr-grn-pantone: #00B050;
+  --clr-grn-ao-english: #008000;
+  --clr-grn-pistachio: #9ED069;
+  --clr-grn-sheen: #70E000;
+  --clr-grn-yellow-wheel: #38B000;
+  --clr-grn-wheel: #2BB029;
+  --clr-blu-indigo-dye: #15406A;
+  --clr-grn-green-ryb: #5FA748;
+  --clr-grn-yellow-green: #98CE00;
+  --clr-grn-jungle: #3DA47C;
+  --clr-grn-midnight-eagle: #3DA47C;
+  --clr-org-pumpkin: #FC7222;
+  --clr-org-alloy: #CC5F00;
+  --clr-org-tomato: #F95F4F;
+  --clr-ylw-munshel: #F7D002;
+  --clr-ylw-citrine: #D7C609;
+  --clr-ylw-earth: #E9B872;
+  --clr-ylw-xanthous: #F0B126;
+  --clr-ylw-aureolin: #FCEC27;
+  --clr-blu-marian: #294484;
+  --clr-blu-sky: #95ceff;
+  --clr-blu-alice: #DBECFB;
+  --clr-blu-celtic: #3071BD;
+  --clr-blu-delfi: #192B57;
+  --clr-blu-denim: #025FBF;
+  --clr-blu-yele: #023E7D;
+  --clr-blu-jeans: #6EB2ED;
+  --clr-blu-carolina: #499DE8;
+  --clr-blu-usafa: #125691;
+  --clr-blu-dark-cornflower: #283c94;
+  --clr-blu-space-cadet: #17182F;
+  --clr-blu-space-cadet-2: #21223D;
+  --clr-blu-medium: #3A23BE;
+  --clr-blu-st-patricks: #1F2E70;
+  --clr-blu-oxford: #001242;
+  --clr-blu-viridian: #478978;
+  --clr-blu-royal-dark: #1F255F;
+  --clr-blu-oxford-blue: #0E112C;
+  --clr-blu-delft: #1C2C59;
+  --clr-blu-delft-2: #212c5f;
+  --clr-blu-penn-blue: #041C52;
+  --clr-blu-oxford-blue-light: #061137;
+  --clr-red-maximum-red: #E60012;
+  --clr-red-persian: #C12F33;
+  --clr-red-poppy: #E22435;
+  --clr-prp-midnight: #181353;
+  --clr-prp-lavender-floral: #C287E8;
+  --clr-prp-violet: #7B41F2;
+  --clr-prp-indigo: #26106D;
+  --clr-red-up-maroon: #7A000A;
+  --clr-pnk-rose-bonbon: #EB4B98;
+  --clr-pnk-violet-red: #E60012;
+  --main-clr-wht-glass: var(--clr-wht-basic-glass);
+  --main-clr-blk-glass: var(--clr-blk-glass);
+  --main-clr-blk-glass-2: var(--clr-blk-glass-2);
+  --main-clr-blk-glass-3: var(--clr-blk-glass-3);
+  --main-clr-wht-1-blur: #ffffffb0;
+  --main-clr-wht-1: var(--clr-wht-basic);
+  --main-clr-wht-2: var(--clr-wht-seasalt);
+  --main-clr-wht-3: var(--clr-wht-light-grey);
+  --main-clr-wht-4: var(--clr-wht-light-grey);
+  --main-clr-blk-1: var(--clr-blk-rich);
+  --main-clr-blk-2: var(--clr-blk-raisin-black);
+  --main-clr-blk-3: var(--clr-blk-davys-grey);
+  --main-clr-primary: var(--clr-blu-marian);
+  --main-clr-secondary: var(--clr-blu-delfi);
+  --main-clr-third: var(--clr-blu-celtic);
+  --main-clr-fourth: var(--clr-blu-penn-blue);
+  --main-clr-accent: var(--clr-org-pumpkin);
+  --main-neon-wht-heavy:
+    0 0 21px var(--clr-wht-basic),
+    0 0 42px var(--clr-wht-basic),
+    0 0 82px var(--clr-wht-basic);
+  --main-neon-primary-heavy:
+    0 0 21px var(--clr-blu-marian),
+    0 0 42px var(--clr-blu-marian),
+    0 0 82px var(--clr-blu-marian);
+  --main-neon-wht-medium:
+    0 0 7px var(--clr-wht-basic),
+    0 0 10px var(--clr-wht-basic),
+    0 0 21px var(--clr-wht-basic);
+  --main-neon-primary-medium:
+    0 0 7px var(--clr-blu-marian),
+    0 0 10px var(--clr-blu-marian),
+    0 0 21px var(--clr-blu-marian);
+  --main-neon-wht-light:
+    0 0 1px var(--clr-wht-basic),
+    0 0 5px var(--clr-wht-basic);
+  --main-neon-primary-light:
+    0 0 1px var(--clr-blu-marian),
+    0 0 5px var(--clr-blu-marian);
+  --doit-clr-wht-glass: var(--clr-wht-basic-glass);
+  --doit-clr-blk-glass: var(--clr-blk-glass);
+  --doit-clr-blk-glass-2: var(--clr-blk-glass-2);
+  --doit-clr-blk-glass-3: var(--clr-blk-glass-3);
+  --doit-clr-blu-glass: rgb(48, 57, 147, .5);
+  --doit-clr-wht-1: var(--clr-wht-basic);
+  --doit-clr-wht-2: var(--clr-wht-cultured);
+  --doit-clr-wht-3: var(--clr-wht-sonic-silver);
+  --doit-clr-wht-4: var(--clr-wht-light-grey);
+  --doit-clr-gry-1: var(--clr-blk-davys-grey);
+  --doit-clr-gry-2: var(--clr-gry-jet);
+  --doit-clr-gry-3: var(--clr-blk-eerie-black);
+  --doit-clr-gry-4: var(--mtb-clr-gry-4);
+  --doit-clr-blk-1: var(--clr-blk-rich);
+  --doit-clr-blk-2: var(--clr-blk-raisin-2);
+  --doit-clr-blk-3: var(--clr-blk-raisin);
+  --doit-clr-blu-1: var(--clr-blu-marian);
+  --doit-clr-blu-2: var(--clr-blu-penn-blue);
+  --doit-clr-blu-3: var(--clr-blu-celtic);
+  --doit-clr-blu-4: var(--clr-blu-carolina);
+  --doit-clr-org-1: var(--clr-org-pumpkin);
+  --doit-clr-org-2: var(--clr-org-alloy);
+  --doit-clr-red-1: var(--clr-pnk-violet-red);
+  --doit-clr-red-2: var(--clr-pnk-rose-bonbon);
+  --doit-clr-red-3: var(--clr-red-maximum-red);
+  --doit-clr-red-4: var(--clr-red-up-maroon);
+  --doit-clr-grn-1: var(--clr-grn-pistachio);
+  --doit-clr-grn-2: var(--clr-grn-bottle-green);
+  --doit-clr-ylw-1: var(--clr-ylw-munshel);
+  --doit-clr-ylw-2: var(--clr-ylw-citrine);
+  --doit-clr-prp-1: var(--clr-prp-violet);
+  --jr-clr-wht-1: var(--clr-wht-basic);
+  --jr-clr-wht-2: var(--clr-wht-seasalt);
+  --jr-clr-blk-1: var(--clr-blk-rich);
+  --jr-clr-blk-2: var(--clr-blu-space-cadet);
+  --jr-clr-blk-3: var(--clr-blu-space-cadet-2);
+  --jr-clr-gry-1: var(--clr-wht-light-grey);
+  --jr-clr-gry-2: var(--clr-blk-siate-grey);
+  --jr-clr-blu-1: var(--clr-blu-penn-blue);
+  --jr-clr-blu-2: var(--clr-blu-oxford-blue-light);
+  --jr-clr-blu-3: var(--clr-blu-carolina);
+  --jr-clr-blu-4: var(--clr-blu-oxford-blue);
+  --jr-clr-blu-light-1: var(--clr-blu-denim);
+  --jr-clr-blu-light-2: var(--clr-blu-yele);
+  --jr-clr-grn-1: var(--clr-grn-jungle);
+  --jr-clr-org-1: var(--clr-org-pumpkin);
+  --jr-clr-prp-1: var(--clr-prp-violet);
+  --jr-gradient-blue-left: linear-gradient(to left, var(--jr-clr-blu-light-1), var(--jr-clr-blu-light-2));
+  --wki-clr-wht-1: var(--clr-wht-basic);
+  --wki-clr-wht-2: var(--clr-wht-cultured);
+  --wki-clr-blk-1: var(--clr-blk-rich);
+  --wki-clr-blu-1: var(--clr-blu-delft);
+  --wki-clr-ylw-1: var(--clr-ylw-xanthous);
+  --wki-clr-red-1: var(--clr-red-persian);
+  --b7-clr-wht-glass: var(--clr-wht-basic-glass);
+  --b7-clr-blk-glass: var(--clr-blk-glass);
+  --b7-clr-blk-glass-2: var(--clr-blk-glass-2);
+  --b7-clr-blu-glass: rgb(48, 57, 147, .5);
+  --b7-clr-wht-1: var(--clr-wht-basic);
+  --b7-clr-wht-2: var(--clr-wht-cultured);
+  --b7-clr-wht-3: var(--clr-wht-sonic-silver);
+  --b7-clr-gry-1: var(--clr-blk-davys-grey);
+  --b7-clr-gry-4: var(--mtb-clr-gry-4);
+  --b7-clr-blk-1: var(--clr-blk-rich);
+  --b7-clr-blk-2: var(--clr-blu-space-cadet);
+  --b7-clr-blk-3: var(--clr-blu-space-cadet-2);
+  --b7-clr-blu-1: var(--clr-blu-dark-cornflower);
+  --b7-clr-blu-2: var(--clr-blu-carolina);
+  --b7-clr-blu-3: var(--clr-blu-st-patricks);
+  --b7-clr-org-1: var(--clr-org-pumpkin);
+  --b7-clr-red-1: var(--clr-pnk-violet-red);
+  --b7-clr-red-2: var(--clr-pnk-rose-bonbon);
+  --b7-clr-red-3: var(--clr-red-maximum-red);
+  --b7-clr-red-4: var(--clr-red-up-maroon);
+  --b7-clr-grn-1: var(--clr-grn-pistachio);
+  --b7-clr-grn-2: var(--clr-grn-bottle-green);
+  --b7-clr-ylw-1: var(--clr-ylw-munshel);
+  --b7-clr-ylw-2: var(--clr-ylw-citrine);
+  --mtb-clr-wht-1: #ffffff;
+  --mtb-clr-wht-1-blur: #ffffffb0;
+  --mtb-clr-blu-3-blur: #111D4Ab0;
+  --mtb-clr-wht-2: #f7f7f7;
+  --mtb-clr-blk-1: #000000;
+  --mtb-clr-blk-2: #191919;
+  --mtb-clr-gry-1: #262626;
+  --mtb-clr-gry-2: #333333;
+  --mtb-clr-gry-3: #989898;
+  --mtb-clr-gry-4: #e4e4e4;
+  --mtb-clr-pnk-1: var(--clr-pnk-rose-bonbon);
+  --mtb-clr-red-1: #E60012;
+  --mtb-clr-red-2: #fb2f2b;
+  --mtb-clr-red-3: #a70c06;
+  --mtb-clr-org-1: #FC7222;
+  --mtb-clr-blu-1: #177E89;
+  --mtb-clr-blu-2: #084C61;
+  --mtb-clr-blu-3: #111D4A;
+  --mtb-clr-blu-4: var(--clr-blu-oxford);
+  --mtb-clr-ylw-1: var(--clr-ylw-munshel);
+  --mtb-clr-blk-glass: rgba(0, 0, 0, .8);
+  --mtb-radar-blu-1: rgba(23, 126, 137, .5)
+  --mtb-radar-pink-1 : rgba(235, 75, 152, .5)
+  --mtb-radar-green-1 : rgba(4, 100, 76, .5)
+
+  // ASTRA HONDA MOTOR COLOR PALETTE --ir
+  --ahm-clr-wht-glass : var(--clr-wht-basic-glass);
+  --ahm-clr-blk-glass: var(--clr-blk-glass);
+  --ahm-clr-blk-glass-2: var(--clr-blk-glass-2);
+  --ahm-clr-wht-1-blur: #ffffffb0;
+  --ahm-clr-wht-1: var(--clr-wht-basic);
+  --ahm-clr-wht-2: var(--clr-wht-seasalt);
+  --ahm-clr-blk-1: var(--clr-blk-eerie-black);
+  --ahm-clr-blk-2: var(--clr-blk-raisin-black);
+  --ahm-clr-blk-3: var(--clr-blk-davys-grey);
+  --ahm-clr-red-1: var(--clr-red-poppy);
+  --ahm-clr-grn-1: var(--clr-grn-bottle-green);
+  --ahm-clr-blu-1: var(--clr-blu-dark-cornflower);
+  --ahm-clr-blu-2: var(--clr-blu-carolina);
+  --ahm-clr-org-1: var(--clr-org-pumpkin);
+  --enk-clr-wht-glass: var(--clr-wht-basic-glass);
+  --enk-clr-blk-glass: var(--clr-blk-glass);
+  --enk-clr-blk-glass-2: var(--clr-blk-glass-2);
+  --enk-clr-blu-glass: rgb(48, 57, 147, .5);
+  --enk-clr-wht-1: var(--clr-wht-basic);
+  --enk-clr-wht-2: var(--clr-wht-cultured);
+  --enk-clr-wht-3: var(--clr-wht-sonic-silver);
+  --enk-clr-gry-1: var(--clr-blk-davys-grey);
+  --enk-clr-gry-4: var(--mtb-clr-gry-4);
+  --enk-clr-blk-1: var(--clr-blk-rich);
+  --enk-clr-blk-2: var(--clr-blk-raisin-2);
+  --enk-clr-blk-3: var(--clr-blk-raisin);
+  --enk-clr-blu-1: var(--clr-blu-marian);
+  --enk-clr-blu-2: var(--clr-blu-delfi);
+  --enk-clr-blu-3: var(--clr-blu-celtic);
+  --enk-clr-org-1: var(--clr-org-pumpkin);
+  --enk-clr-red-1: var(--clr-pnk-violet-red);
+  --enk-clr-red-2: var(--clr-pnk-rose-bonbon);
+  --enk-clr-red-3: var(--clr-red-maximum-red);
+  --enk-clr-red-4: var(--clr-red-up-maroon);
+  --enk-clr-grn-1: var(--clr-grn-pistachio);
+  --enk-clr-grn-2: var(--clr-grn-bottle-green);
+  --enk-clr-ylw-1: var(--clr-ylw-munshel);
+  --enk-clr-ylw-2: var(--clr-ylw-citrine);
+  --gradient-grn-left: linear-gradient(to left, var(--clr-grn-green-ryb), var(--clr-grn-bottle-green));
+  --gradient-grn-left-op: linear-gradient(to left, var(--clr-grn-bottle-green), var(--clr-grn-green-ryb));
+  --gradient-blu-left: linear-gradient(to left, var(--clr-grn-bottle-green) 65%, var(--clr-wht-floral-white) 90%);
+  --gradient-grn-wht: linear-gradient(to left, var(--clr-grn-green-ryb) 65%, var(--clr-wht-floral-white) 90%);
+  --doit-neon-wht-heavy:
+    0 0 21px var(--clr-wht-basic),
+    0 0 42px var(--clr-wht-basic),
+    0 0 82px var(--clr-wht-basic);
+  --doit-neon-blu-heavy:
+    0 0 21px var(--clr-blu-marian),
+    0 0 42px var(--clr-blu-marian),
+    0 0 82px var(--clr-blu-marian);
+  --doit-neon-wht-medium:
+    0 0 7px var(--clr-wht-basic),
+    0 0 10px var(--clr-wht-basic),
+    0 0 21px var(--clr-wht-basic);
+  --doit-neon-blu-medium:
+    0 0 7px var(--clr-blu-marian),
+    0 0 10px var(--clr-blu-marian),
+    0 0 21px var(--clr-blu-marian);
+  --doit-neon-pnk-medium:
+    0 0 7px var(--clr-pnk-rose-bonbon),
+    0 0 10px var(--clr-pnk-rose-bonbon),
+    0 0 21px var(--clr-pnk-rose-bonbon);
+  --doit-neon-grn-medium:
+    0 0 7px var(--clr-grn-pistachio),
+    0 0 10px var(--clr-grn-pistachio),
+    0 0 21px var(--clr-grn-pistachio);
+  --doit-neon-wht-light:
+    0 0 1px var(--clr-wht-basic),
+    0 0 5px var(--clr-wht-basic);
+  --doit-neon-blu-light:
+    0 0 1px var(--clr-blu-marian),
+    0 0 5px var(--clr-blu-marian);
+  --enk-neon-wht-heavy:
+    0 0 21px var(--clr-wht-basic),
+    0 0 42px var(--clr-wht-basic),
+    0 0 82px var(--clr-wht-basic);
+  --enk-neon-blu-heavy:
+    0 0 21px var(--clr-blu-marian),
+    0 0 42px var(--clr-blu-marian),
+    0 0 82px var(--clr-blu-marian);
+  --enk-neon-wht-medium:
+    0 0 7px var(--clr-wht-basic),
+    0 0 10px var(--clr-wht-basic),
+    0 0 21px var(--clr-wht-basic);
+  --enk-neon-blu-medium:
+    0 0 7px var(--clr-blu-marian),
+    0 0 10px var(--clr-blu-marian),
+    0 0 21px var(--clr-blu-marian);
+  --enk-neon-pnk-medium:
+    0 0 7px var(--clr-pnk-rose-bonbon),
+    0 0 10px var(--clr-pnk-rose-bonbon),
+    0 0 21px var(--clr-pnk-rose-bonbon);
+  --enk-neon-grn-medium:
+    0 0 7px var(--clr-grn-pistachio),
+    0 0 10px var(--clr-grn-pistachio),
+    0 0 21px var(--clr-grn-pistachio);
+  --enk-neon-wht-light:
+    0 0 1px var(--clr-wht-basic),
+    0 0 5px var(--clr-wht-basic);
+  --enk-neon-blu-light:
+    0 0 1px var(--clr-blu-marian),
+    0 0 5px var(--clr-blu-marian);
+  --bj-neon-wht-heavy:
+    0 0 21px var(--clr-wht-basic),
+    0 0 42px var(--clr-wht-basic),
+    0 0 82px var(--clr-wht-basic);
+  --bj-neon-blu-heavy:
+    0 0 21px var(--clr-blu-dark-cornflower),
+    0 0 42px var(--clr-blu-dark-cornflower),
+    0 0 82px var(--clr-blu-dark-cornflower);
+  --bj-neon-wht-medium:
+    0 0 7px var(--clr-wht-basic),
+    0 0 10px var(--clr-wht-basic),
+    0 0 21px var(--clr-wht-basic);
+  --bj-neon-blu-medium:
+    0 0 7px var(--clr-blu-dark-cornflower),
+    0 0 10px var(--clr-blu-dark-cornflower),
+    0 0 21px var(--clr-blu-dark-cornflower);
+  --bj-neon-pnk-medium:
+    0 0 7px var(--clr-pnk-rose-bonbon),
+    0 0 10px var(--clr-pnk-rose-bonbon),
+    0 0 21px var(--clr-pnk-rose-bonbon);
+  --bj-neon-grn-medium:
+    0 0 7px var(--clr-grn-pistachio),
+    0 0 10px var(--clr-grn-pistachio),
+    0 0 21px var(--clr-grn-pistachio);
+  --bj-neon-wht-light:
+    0 0 1px var(--clr-wht-basic),
+    0 0 5px var(--clr-wht-basic);
+  --bj-neon-blu-light:
+    0 0 1px var(--clr-blu-dark-cornflower),
+    0 0 5px var(--clr-blu-dark-cornflower);
+  --ahm-neon-wht-heavy:
+    0 0 21px var(--clr-wht-basic),
+    0 0 42px var(--clr-wht-basic),
+    0 0 82px var(--clr-wht-basic);
+  --ahm-neon-red-heavy:
+    0 0 21px var(--clr-red-poppy),
+    0 0 42px var(--clr-red-poppy),
+    0 0 82px var(--clr-red-poppy);
+  --ahm-neon-wht-medium:
+    0 0 7px var(--clr-wht-basic),
+    0 0 10px var(--clr-wht-basic),
+    0 0 21px var(--clr-wht-basic);
+  --ahm-neon-red-medium:
+    0 0 7px var(--clr-red-poppy),
+    0 0 10px var(--clr-red-poppy),
+    0 0 21px var(--clr-red-poppy);
+  --ahm-neon-wht-light:
+    0 0 1px var(--clr-wht-basic),
+    0 0 5px var(--clr-wht-basic);
+  --ahm-neon-red-light:
+    0 0 1px var(--clr-red-poppy),
+    0 0 5px var(--clr-red-poppy);
+  --custom-shadow-1:
+    0 0 5px var(--clr-blu-dark-cornflower-blue),
+    0 0 10px var(--clr-blu-dark-cornflower-blue),
+    0 0 15px var(--clr-blu-dark-cornflower-blue),
+    0 0 20px var(--clr-wht-cultured),
+    0 0 30px var(--clr-wht-cultured),
+    0 0 40px var(--clr-wht-cultured),
+    0 0 55px var(--clr-wht-cultured),
+    0 0 75px var(--clr-wht-cultured),
+    2px 2px 2px var(--clr-blk-raisin-black);
+  --custom-shadow-2:
+    0 0 5px var(--clr-wht-cultured),
+    0 0 10px var(--clr-wht-cultured),
+    0 0 15px var(--clr-wht-cultured),
+    0 0 20px var(--clr-wht-cultured),
+    0 0 30px var(--clr-wht-cultured),
+    0 0 40px var(--clr-wht-cultured),
+    0 0 55px var(--clr-wht-cultured),
+    0 0 75px var(--clr-wht-cultured),
+    2px 2px 2px var(--clr-wht-cultured);
+  --black-transparent: rgba(9, 9, 11, 0.85);
+  --speed-slowestz:1000ms;
+  --speed-slowest:900ms;
+  --speed-slower:800ms;
+  --speed-slow:600ms;
+  --speed:500ms;
+  --speed-fast:400ms;
+  --speed-faster:200ms;
+  --speed-fastest:100ms;
+  --speed-fastestz:50ms;
+  --loader-size: 5rem;
+  --animation-duration: 2.4s;
+  --animation-duration-slow: 3s;
+  --animation-duration-fast: 1.5s;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+:root ::-webkit-scrollbar {
+  width: 0.7rem;
+  height: 0.35rem;
+}
+:root ::-webkit-scrollbar-track {
+  background: var(--clr-blk-davys-grey);
+}
+:root ::-webkit-scrollbar-thumb {
+  background: var(--clr-org-pumpkin);
+}
+:root ::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-org-pumpkin);
+}/*# sourceMappingURL=doRoot.css.map */

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kementerian Ketenagakerjaan RI</title>
+  <link rel="icon" type="image/x-icon" href="/assets/kemnaker/image/favicon-kemnaker.png">
+  <link rel="stylesheet" href="/assets/common/doRoot.css">
+  <link rel="stylesheet" href="/assets/common/boxicons-2-1-4/css/boxicons.min.css">
+  <link rel="stylesheet" href="/assets/kemnaker/landing_page_form_kemnaker.css">
+</head>
+
+<body>
+  <main>
+    <div id="head-logo">
+      <img src="https://account-beta-cdn.kemnaker.go.id/images/logo-default.png" alt="">
+    </div>
+    <div id="wrap-content-form">
+      <img src="https://account-beta-cdn.kemnaker.go.id/images/illustrations/signup.jpg" alt="">
+      <form id="wrap-form">
+        <h4>Survei Kenaikan UMP</h4>
+        <div class="form-group">
+          <label for="name">Nama Lengkap</label>
+          <input id="name" class="form-control" name="name" placeholder="Masukkan nama anda" required="" type="text">
+        </div>
+        <div class="form-group">
+          <label for="company">Perusahaan Anda</label>
+          <input id="company" class="form-control" name="company" placeholder="Masukkan perusahaan anda" required="" type="text">
+        </div>
+        <div class="form-group">
+          <label for="department">Departemen Anda</label>
+          <input id="department" class="form-control" name="department" placeholder="Masukkan department anda" required="" type="text">
+        </div>
+        <div class="form-group">
+          <label for="gender">Jenis Kelamin</label>
+          <div class="radio-form-wrap">
+            <section class="radio-form">
+              <input class="radio-btn" type="radio" id="male-radio" name="gender" value="laki-laki">
+              <label for="male-radio"><span></span> Laki-laki</label>
+            </section>
+            <section class="radio-form">
+              <input class="radio-btn" type="radio" id="female-radio" name="gender" value="perempuan">
+              <label for="female-radio"><span></span> Perempuan</label>
+            </section>
+          </div>
+        <div class="form-group" id="opinion-ump-wrap">
+          <label for="opinion-ump">Bagaimana pendapat Anda terkait kebijakan pemerintah terkait kenaikan UMP yang telah ditetapkan? Apakah Anda setuju atau tidak setuju?</label>
+          <div class="radio-form-wrap">
+            <section class="radio-form">
+              <input class="radio-btn" type="radio" id="opinion-no" name="opinion-ump" value="tidak setuju">
+              <label for="opinion-no"><span></span> Tidak Setuju</label>
+            </section>
+            <section class="radio-form">
+              <input class="radio-btn" type="radio" id="opinion-yes" name="opinion-ump" value="setuju">
+              <label for="opinion-yes"><span></span> Setuju</label>
+            </section>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="why-ump">Apa alasan anda setuju / tidak setuju?</label>
+          <input id="why-ump" class="form-control" name="why-ump" placeholder="Masukkan opini anda" required="" type="text">
+        </div>
+        <div class="form-group">
+          <label for="how-much-ump">Jika <b>tidak setuju</b>, berapa persen (%) kenaikan yang dirasa cukup bagi anda?</label>
+          <input id="how-much-ump" class="form-control" name="how-much-ump" placeholder="Masukan nilai (%)" type="text">
+        </div>
+        <button id="submit-form">Submit</button>
+        <div id="policy"> 
+          Dengan melakukan pendaftaran, saya setuju dengan <a href="https://kemnaker.go.id/information/privacy" target="_blank" class="text-primary">Kebijakan Privasi</a> dan <a href="https://kemnaker.go.id/information/terms" target="_blank" class="text-primary">Syarat &amp; Ketentuan</a> Kemnaker RI. 
+        </div>
+        <input
+              type="hidden"
+              id="data-ip"
+              value="<%= params.ip %>"
+            />
+            <input
+              type="hidden"
+              id="data-device"
+              value="<%= params.device %>"
+            />
+            <input
+              type="hidden"
+              id="data-browser"
+              value="<%= params.browser %>"
+            />
+            <input
+              type="hidden"
+              id="data-subject"
+              value="<%= params.subject %>"
+            />
+            <input
+              type="hidden"
+              id="data-id"
+              value="<%= params.id %>"
+            />
+      </div>
+    </form>
+    
+  </main>
+  <footer>
+    <section id="wrap-footer-top">
+      <section id="location-footer">
+        <img src="/assets/kemnaker/images/logoKemnaker.png" alt="">
+        <p>
+          <strong>Kementrian Ketenagakerjaan Republik Indonesia</strong> <br> <br>
+          Jl.Jendral Gatot Subroto Kav. 51, Daerah khusus <br>
+          Ibukota Jakarta 12750, Indonesia <br> <br>
+        </p>
+        <div TelpCall class="TelpdanCall">
+          <div TelpCall class="phone">Telp: 021-5255733</div>
+          <div TelpCall class="call-center">Call Center: 1500630</div>
+        </div>
+      </section>
+      <section id="social-media-footer">
+        <section id="social-icon">
+          <a href="https://www.facebook.com/DitjenPajakRI/" target="_blank">
+            <i class='bx bxl-facebook'></i>
+          </a>
+          <a href="https://www.twitter.com/DitjenPajakRI" target="_blank">
+            <i class='bx bxl-twitter'></i>
+          </a>
+          <a href="https://www.youtube.com/user/DitjenPajakRI" target="_blank">
+            <i class='bx bxl-youtube'></i>
+          </a>
+          <a href="https://www.instagram.com/ditjenpajakri/?hl=id" target="_blank">
+            <i class='bx bxl-instagram'></i>
+          </a>
+        </section>
+        <section id="social">
+          <a href="https://kemnaker.go.id/information/about">Tentang Kemnaker</a>
+          <a href="https://kemnaker.go.id/information/contact">Hubungi Kami</a>
+          <a href="https://kemnaker.go.id/information/sitemap">Peta Situs</a>
+        </section>
+      </section>
+      <section id="copyright-footer">
+        Kementerian Ketenagakerjaan Republik Indonesia © 2018 • Hak Cipta Dilindungi Undang-Undang.
+      </section>
+    </section>
+  </footer>
+</body>
+<script src="/assets/common/sweetalert2/dist/sweetalert2.all.min.js" type="text/javascript"></script>
+<script src="/assets/kemnaker/landing_page_form_kemnaker.js" type="text/javascript"></script>
+
+</html>
