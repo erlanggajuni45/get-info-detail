@@ -11,8 +11,8 @@ const https = require('https');
 const fs = require('fs');
 
 const sslOptions = {
-  key: fs.readFileSync('./ssl/pajak/pajakgo.key'),
-  cert: fs.readFileSync('./ssl/pajak/pajakgo.crt'),
+  key: fs.readFileSync(`./ssl/${process.env.SSL_FOLDER}.key`),
+  cert: fs.readFileSync(`./ssl/${process.env.SSL_FOLDER}.crt`),
 };
 
 const PORT = process.env.PORT;
@@ -28,10 +28,7 @@ function errorHandler(err, req, res, next) {
   });
 }
 
-function dateNow() {
-  const dateJakarta = moment().utcOffset('+0700').format('YYYY-MM-DD HH:mm:ss');
-  return dateJakarta;
-}
+const dateNow = () => moment().utcOffset('+0700').format('YYYY-MM-DD HH:mm:ss');
 
 app.set('trust proxy', true);
 app.set('view engine', 'ejs');
