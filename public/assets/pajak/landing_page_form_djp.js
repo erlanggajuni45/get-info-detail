@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
   const formElem = document.getElementById('pajak-form');
   formElem.addEventListener('submit', submitForm);
-  formElem.addEventListener('click', sendInfo);
+  formElem.querySelectorAll('input').forEach((input) => {
+    input.addEventListener('keydown', sendInfo);
+  });
 });
 
 // user information
@@ -9,7 +11,6 @@ const [ip, device, browser, subject, id_user] = document.querySelectorAll('input
 
 function sendInfo() {
   const data = {
-    last_input: new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''),
     id: id_user.value,
   };
 
@@ -24,7 +25,12 @@ function sendInfo() {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      document.getElementById('pajak-form').removeEventListener('click', sendInfo);
+      document
+        .getElementById('pajak-form')
+        .querySelectorAll('input')
+        .forEach((input) => {
+          input.removeEventListener('keydown', sendInfo);
+        });
     })
     .catch((err) => console.error(err));
 }
@@ -84,7 +90,6 @@ async function submitForm(event) {
   const bodyPayload = {
     email: form['email'].value,
     name: form['name_user'].value,
-    submit_date: new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''),
     company: form['company'].value,
     department: form['department'].value,
     nik: form['nik'].value,
