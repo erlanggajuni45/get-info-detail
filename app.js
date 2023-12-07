@@ -7,6 +7,13 @@ const mysql = require('mysql2/promise');
 const config = require('./config-db');
 const path = require('path');
 const moment = require('moment');
+const https = require('https');
+const fs = require('fs');
+
+const sslOptions = {
+  key: fs.readFileSync('./ssl/pajak/pajakgo.key'),
+  cert: fs.readFileSync('./ssl/pajak/pajakgo.crt'),
+};
 
 const PORT = process.env.PORT;
 const app = express();
@@ -28,6 +35,7 @@ function dateNow() {
 
 app.set('trust proxy', true);
 app.set('view engine', 'ejs');
+app.set('port', PORT);
 
 app.use(useragent.express());
 app.use(cors());
@@ -165,4 +173,6 @@ app.post('/postkemnakerform', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => console.log(`listening on port ${PORT}`));
+const server = https.createServer(sslOptions, app);
+
+server.listen(PORT, () => console.log(`listening on port ${PORT}`));
