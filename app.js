@@ -66,8 +66,8 @@ app.get('/shared', async (req, res) => {
   const date = dateNow();
 
   const [result] = await connection.query(
-    'UPDATE mst_phishing SET counter = counter + 1, last_click = ?, last_accessed_ip = ?, last_accessed_device = ?, last_accessed_browser = ? WHERE id = ?',
-    [date, ipAddresses, `${platform} (${os})`, browser, id]
+    'UPDATE mst_phishing SET counter = counter + 1, last_click = ?, last_accessed_ip = ?, last_accessed_device = ?, last_accessed_browser = ? WHERE id = ? AND subject = ?',
+    [date, ipAddresses, `${platform} (${os})`, browser, id, subject]
   );
   if (result.affectedRows == 1) {
     const views = subject == 'PAJAK' ? 'pajak/index' : 'kemnaker/index';
