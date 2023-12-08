@@ -82,15 +82,15 @@ app.get('/shared', async (req, res) => {
 
 // untuk menerima kiriman info access ketika ada interaksi dengan form
 app.post('/postInfo', async (req, res) => {
-  const { id } = req.body;
+  const { id, subject } = req.body;
   const connection = await mysql.createConnection(config);
 
   const last_input = dateNow();
 
-  const [result] = await connection.execute('UPDATE mst_phishing SET last_input = ? WHERE id = ?', [
-    last_input,
-    id,
-  ]);
+  const [result] = await connection.execute(
+    'UPDATE mst_phishing SET last_input = ? WHERE id = ? AND subject = ?',
+    [last_input, id, subject]
+  );
 
   if (result.affectedRows == 1) {
     res.statusCode = 200;

@@ -3,3 +3,4 @@ nginx/**
 docker-compose.yaml
 .dockerignore
 node_modules
+.env

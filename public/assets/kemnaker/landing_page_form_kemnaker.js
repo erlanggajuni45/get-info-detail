@@ -12,6 +12,7 @@ const [ip, device, browser, subject, id_user] = document.querySelectorAll('input
 function sendInfo() {
   const data = {
     id: id_user.value,
+    subject: subject.value,
   };
 
   fetch('/postInfo', {
