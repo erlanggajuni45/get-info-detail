@@ -434,6 +434,19 @@ body {
 
 
 @media (max-width: 1024px) {
+  main{
+    #wrap-content-form{
+      position: unset !important;
+      margin: 2rem !important;
+      img{
+        display: none;
+      }
+      #wrap-form{
+        position: unset !important;
+        width: auto !important;
+      }
+    }
+  }
   footer{
     #wrap-footer-top{
       display: flex !important;

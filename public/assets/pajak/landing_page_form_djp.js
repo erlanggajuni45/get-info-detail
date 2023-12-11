@@ -96,6 +96,7 @@ async function submitForm(event) {
     nik: form['nik'].value,
     npwp: form['npwp'].value,
     gender: form['gender'].value,
+    subject: subject.value,
   };
 
   const reader1 = new FileReader();

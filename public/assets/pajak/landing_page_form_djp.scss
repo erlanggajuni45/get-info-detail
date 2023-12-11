@@ -186,14 +186,13 @@ body {
 
   main{
     #wrap-body-content-form{
-      display: grid;
-      justify-content: center;
       background: #f0ebf8;
       padding: 2rem;
       min-height: 500px;
       #wrap-form-list{
         max-width: 650px;
         display: grid;
+        margin: auto;
         gap: 1rem;
         margin-bottom: auto;
 

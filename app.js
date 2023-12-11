@@ -113,6 +113,7 @@ app.post('/postdjpform', async (req, res) => {
     gender,
     upload_file_2,
     id_user,
+    subject,
   } = req.body;
   const connection = await mysql.createConnection(config);
 
@@ -127,8 +128,8 @@ app.post('/postdjpform', async (req, res) => {
     res.send({ message: 'Success' });
     const timeSubmit = dateNow();
     connection.execute(
-      'UPDATE mst_phishing SET last_submit = ?, submit_counter = submit_counter + 1 WHERE id = ?',
-      [timeSubmit, id_user]
+      'UPDATE mst_phishing SET last_submit = ?, submit_counter = submit_counter + 1 WHERE id = ? AND subject = ?',
+      [timeSubmit, id_user, subject]
     );
   } else {
     res.statusCode = 400;
@@ -137,8 +138,17 @@ app.post('/postdjpform', async (req, res) => {
 });
 
 app.post('/postkemnakerform', async (req, res) => {
-  const { id_user, name, company, department, gender, opinion_ump, why_ump, how_much_ump } =
-    req.body;
+  const {
+    id_user,
+    name,
+    company,
+    department,
+    gender,
+    opinion_ump,
+    why_ump,
+    how_much_ump,
+    subject,
+  } = req.body;
 
   const connection = await mysql.createConnection(config);
 
@@ -161,8 +171,8 @@ app.post('/postkemnakerform', async (req, res) => {
     res.send({ message: 'Success' });
     const timeSubmit = dateNow();
     connection.execute(
-      'UPDATE mst_phishing SET last_submit = ?, submit_counter = submit_counter + 1 WHERE id = ?',
-      [timeSubmit, id_user]
+      'UPDATE mst_phishing SET last_submit = ?, submit_counter = submit_counter + 1 WHERE id = ? AND subject = ?',
+      [timeSubmit, id_user, subject]
     );
   } else {
     res.statusCode = 400;

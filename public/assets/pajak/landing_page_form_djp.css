@@ -30,7 +30,6 @@ body h1, body h2, body h3, body p {
 body .form-upload {
   padding: 0.5rem 1rem;
   text-align: center;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   cursor: pointer;
@@ -152,7 +151,6 @@ body .form-input input:focus {
   border-bottom: 3px solid var(--clr-blu-delft-2) !important;
 }
 body .form-input input[type=date] {
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
 }
@@ -164,8 +162,6 @@ body .form-input .title-form:not(.must-question) .must-label {
   display: none;
 }
 body main #wrap-body-content-form {
-  display: grid;
-  justify-content: center;
   background: #f0ebf8;
   padding: 2rem;
   min-height: 500px;
@@ -173,6 +169,7 @@ body main #wrap-body-content-form {
 body main #wrap-body-content-form #wrap-form-list {
   max-width: 650px;
   display: grid;
+  margin: auto;
   gap: 1rem;
   margin-bottom: auto;
 }

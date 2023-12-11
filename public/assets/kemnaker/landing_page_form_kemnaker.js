@@ -35,22 +35,6 @@ function sendInfo() {
     })
     .catch((err) => console.error(err));
 }
-// function sendForm (){
-//   wrapForm = document.getElementById('wrap-form-list')
-//   wrapForm.querySelectorAll('.question-content').forEach( boxForm => {
-//     boxForm.style.display = 'none';
-//   });
-
-//   wrapForm.querySelector('.form-btn').style.display = 'none';
-//   wrapForm.querySelector('#info-box-form').innerHTML = 'Thanks for submitting!'
-// }
-
-// function showReasonInput(el) {
-//   var questionValue = el.getAttribute('value');
-//   var reasonInput = document.getElementById('reason-question');
-//   reasonInput.style.display = 'block'
-//   reasonInput.placeholder = (questionValue === 'setuju') ? "Alasan Anda Setuju" : "Alasan Anda Tidak Setuju";
-// }
 
 async function submitForm(event) {
   event.preventDefault();
@@ -89,13 +73,14 @@ async function submitForm(event) {
     opinion_ump: form['opinion-ump'].value,
     why_ump: form['why-ump'].value,
     how_much_ump: form['how-much-ump'].value || '',
+    subject: subject.value,
   };
 
   const btnSubmit = document.querySelector('#submit-form');
   btnSubmit.setAttribute('disabled', 'disabled');
 
   try {
-    const response = await fetch('/postkemnakerform', {
+    await fetch('/postkemnakerform', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -109,15 +94,6 @@ async function submitForm(event) {
       icon: 'success',
       html: `Terima kasih atas partisipasinya`,
     });
-    // const responseJson = response.json();
-    // console.log(responseJson);
-    // let wrapForm = document.getElementById('wrap-form-list');
-    // wrapForm.querySelectorAll('.question-content').forEach((boxForm) => {
-    //   boxForm.style.display = 'none';
-    // });
-
-    // wrapForm.querySelector('.form-btn').style.display = 'none';
-    // wrapForm.querySelector('#info-box-form').innerHTML = 'Terima kasih telah mengisi data anda!';
   } catch (error) {
     console.log(error);
     Swal.fire({ title: 'Gagal', text: 'Gagal submit form! Silahkan coba lagi', icon: 'error' });
