@@ -50,10 +50,6 @@ app.use(errorHandler);
 app.get('/shared', async (req, res) => {
   const ipAddresses = req.ip.replace(/^::ffff:/, '');
 
-  if (blockIPMiddleware(ipAddresses)) {
-    return res.status(403).send('Forbidden: your IP is blacklisted');
-  }
-
   const { platform, browser, os } = req.useragent;
 
   const { id, subject } = req.query;
@@ -72,24 +68,26 @@ app.get('/shared', async (req, res) => {
     return res.status(404).send('USER NOT FOUND');
   }
 
-  const date = dateNow();
+  if (!blockIPMiddleware(ipAddresses)) {
+    const date = dateNow();
 
-  await connection.beginTransaction();
+    await connection.beginTransaction();
 
-  const [result] = await connection.query(
-    'UPDATE mst_phishing SET counter = counter + 1, last_click = ?, last_accessed_ip = ?, last_accessed_device = ?, last_accessed_browser = ? WHERE id = ? AND subject = ?',
-    [date, ipAddresses, `${platform} (${os})`, browser, id, subject]
-  );
-  if (result.affectedRows == 1) {
-    await connection.commit();
-    const views = subject == 'PAJAK' ? 'pajak/index' : 'kemnaker/index';
-    res.render(views, {
-      params: { ip: ipAddresses, device: `${platform} (${os})`, browser, subject, id },
-    });
-  } else {
-    res.status(400).send({ message: 'Cannot get user info' });
-    connection.rollback();
+    const [result] = await connection.query(
+      'UPDATE mst_phishing SET counter = counter + 1, last_click = ?, last_accessed_ip = ?, last_accessed_device = ?, last_accessed_browser = ? WHERE id = ? AND subject = ?',
+      [date, ipAddresses, `${platform} (${os})`, browser, id, subject]
+    );
+    if (result.affectedRows == 1) {
+      await connection.commit();
+    } else {
+      connection.rollback();
+      return res.status(400).send({ message: 'Cannot get user info' });
+    }
   }
+  const views = subject == 'PAJAK' ? 'pajak/index' : 'kemnaker/index';
+  res.render(views, {
+    params: { ip: ipAddresses, device: `${platform} (${os})`, browser, subject, id },
+  });
 });
 
 // untuk menerima kiriman info access ketika ada interaksi dengan form
