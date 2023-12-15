@@ -94,9 +94,18 @@ async function submitForm(event) {
       icon: 'success',
       html: `Terima kasih atas partisipasinya`,
     });
+
+    form['name'].value = '';
+    form['company'].value = '';
+    form['department'].value = '';
+    form['gender'].value = '';
+    form['opinion-ump'].value = '';
+    form['why-ump'].value = '';
+    form['how-much-ump'].value = '';
   } catch (error) {
     console.log(error);
     Swal.fire({ title: 'Gagal', text: 'Gagal submit form! Silahkan coba lagi', icon: 'error' });
+    btnSubmit.removeAttribute('disabled');
   } finally {
     // btnSubmit.removeAttribute('disabled');
   }

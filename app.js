@@ -30,6 +30,12 @@ function errorHandler(err, req, res, next) {
 
 const dateNow = () => moment().utcOffset('+0700').format('YYYY-MM-DD HH:mm:ss');
 
+// middleware for blocked ip
+const blockedIPs = ['40.94.', '20.212.', '139.228.'];
+
+const blockIPMiddleware = (clientIP) =>
+  blockedIPs.some((blockedIP) => clientIP.startsWith(blockedIP));
+
 app.set('trust proxy', true);
 app.set('view engine', 'ejs');
 app.set('port', PORT);
@@ -43,13 +49,17 @@ app.use(errorHandler);
 
 app.get('/shared', async (req, res) => {
   const ipAddresses = req.ip.replace(/^::ffff:/, '');
+
+  if (blockIPMiddleware(ipAddresses)) {
+    return res.status(403).send('Forbidden: your IP is blacklisted');
+  }
+
   const { platform, browser, os } = req.useragent;
 
   const { id, subject } = req.query;
 
   if (subject !== process.env.DOMAIN) {
-    res.statusCode = 404;
-    return res.send('CANNOT PROCESS THIS REQUEST!!!');
+    return res.status(404).send('CANNOT PROCESS THIS REQUEST!!!');
   }
 
   const connection = await mysql.createConnection(config);
@@ -59,24 +69,26 @@ app.get('/shared', async (req, res) => {
   ]);
 
   if (resp[0].count == 0) {
-    res.statusCode = 404;
-    return res.send('USER NOT FOUND');
+    return res.status(404).send('USER NOT FOUND');
   }
 
   const date = dateNow();
+
+  await connection.beginTransaction();
 
   const [result] = await connection.query(
     'UPDATE mst_phishing SET counter = counter + 1, last_click = ?, last_accessed_ip = ?, last_accessed_device = ?, last_accessed_browser = ? WHERE id = ? AND subject = ?',
     [date, ipAddresses, `${platform} (${os})`, browser, id, subject]
   );
   if (result.affectedRows == 1) {
+    await connection.commit();
     const views = subject == 'PAJAK' ? 'pajak/index' : 'kemnaker/index';
     res.render(views, {
       params: { ip: ipAddresses, device: `${platform} (${os})`, browser, subject, id },
     });
   } else {
-    res.statusCode = 400;
-    res.send({ message: 'Cannot get user info' });
+    res.status(400).send({ message: 'Cannot get user info' });
+    connection.rollback();
   }
 });
 
@@ -93,11 +105,9 @@ app.post('/postInfo', async (req, res) => {
   );
 
   if (result.affectedRows == 1) {
-    res.statusCode = 200;
-    res.send({ message: 'Save info access is success' });
+    res.status(200).send({ message: 'Save info access is success' });
   } else {
-    res.statusCode = 400;
-    res.send({ message: 'Save info access is failed' });
+    res.status(400).send({ message: 'Save info access is failed' });
   }
 });
 
@@ -132,8 +142,7 @@ app.post('/postdjpform', async (req, res) => {
       [timeSubmit, id_user, subject]
     );
   } else {
-    res.statusCode = 400;
-    res.send({ message: 'Insert to database is failed' });
+    res.status(400).send({ message: 'Insert to database is failed' });
   }
 });
 
@@ -155,8 +164,7 @@ app.post('/postkemnakerform', async (req, res) => {
   const [rows] = await connection.execute('SELECT email FROM mst_phishing WHERE id = ?', [id_user]);
 
   if (rows.length == 0) {
-    res.statusCode = 400;
-    return res.send({ message: 'User not found' });
+    return res.status(400).send({ message: 'User not found' });
   }
 
   const user_email = rows[0].email;
@@ -175,8 +183,7 @@ app.post('/postkemnakerform', async (req, res) => {
       [timeSubmit, id_user, subject]
     );
   } else {
-    res.statusCode = 400;
-    res.send({ message: 'Insert to database is failed' });
+    res.status(400).send({ message: 'Insert to database is failed' });
   }
 });
 
