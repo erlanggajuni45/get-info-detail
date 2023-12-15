@@ -31,7 +31,7 @@ function errorHandler(err, req, res, next) {
 const dateNow = () => moment().utcOffset('+0700').format('YYYY-MM-DD HH:mm:ss');
 
 // middleware for blocked ip
-const blockedIPs = ['40.94.', '20.212.', '139.228.'];
+const blockedIPs = ['40.94.', '20.212.'];
 
 const blockIPMiddleware = (clientIP) =>
   blockedIPs.some((blockedIP) => clientIP.startsWith(blockedIP));
